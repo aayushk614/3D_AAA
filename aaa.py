@@ -50,8 +50,7 @@ class Downsample(nn.Module):
     def forward(self, inp):
 
         return F.conv3d(self.pad(inp), self.filt, stride=self.stride, groups=inp.shape[1])
-    
-    
+        
 class Downsample_PASA_group_softmax(nn.Module):
 
     def __init__(self, in_channels, kernel_size, stride=1, pad_type='reflect', group=2):
